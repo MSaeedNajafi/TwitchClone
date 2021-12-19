@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { StreamChat } from "stream-chat";
 import { Chat, Channel, ChannelList } from "stream-chat-react";
 import "@stream-io/stream-chat-css/dist/css/index.css";
+import { useCookies } from "react-cookie";
 
 import ChatContainer from "./components/CharMessegerContainer/ChatContainer";
 import Auth from "./components/Auth";
@@ -9,20 +10,25 @@ import Video from "./components/Video/Video";
 const client = StreamChat.getInstance("cdrs6vst5auz");
 
 const App = () => {
+  const [cookies, setCookie, removeCookie] = useCookies(["user"]);
+
   const [clientReady, setClientReady] = useState(false);
   const [channel, setChannel] = useState(null);
 
-  const authToken = false;
+  const authToken = cookies.AuthToken;
+  console.log(cookies);
+  console.log(authToken);
 
   useEffect(() => {
     const setupClient = async () => {
       try {
         await client.connectUser(
           {
-            id: "dave-matthews",
-            name: "Dave Matthews",
+            id: cookies.UserId,
+            name: cookies.name,
+            hashPassword: cookies.hashedhPassword,
           },
-          "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiZGF2ZS1tYXR0aGV3cyJ9.LCquTXyh7B_DPq1itGrRDzB2rWozq0BSOyhE2uIadJY"
+          authToken
         );
 
         const channel = await client.channel("gaming", "gamingDemo", {
