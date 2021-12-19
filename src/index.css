@@ -11,3 +11,74 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+
+.video-container{
+  width: 50%;
+  height: 100%;
+}
+
+.chat-container{
+  width: 50%;
+}
+
+.auth-container{
+  width: 100vw;
+  height: 100vh;
+  background-color: #070a0d;
+  display: flex;
+  justify-content: center;
+}
+
+.auth-container-box{
+  background-color: #151a1f;
+  align-self: center;
+}
+
+.auth-container-form{
+  display: flex;
+  flex-direction: column;
+  padding: 5px;
+}
+
+.auth-container-form input{
+  font-size: 20px;
+  padding: 8px;
+  margin: 0 0 8px 0;
+}
+
+.auth-container-form button{
+  /* width: 50%; */
+  text-align: center;
+  color: #ffffff;
+  font-size: 20px;
+  border: none;
+  background-color: #214c77;
+  padding: 8px;
+}
+
+.auth-container-form button:hover{
+  background-color: #3c8bda;
+}
+
+.auth-options{
+  display: flex;
+  /* justify-content: space-around; */
+  padding: 5px;
+}
+
+.auth-options button{
+  width: 50%;
+  text-align: center;
+  color: #ffffff;
+  font-size: 20px;
+  border: none;
+  background-color: #151a1f;
+  padding: 8px;
+}
+
+.error-message{
+  font-size: 18px;
+  color: red;
+  padding: 8px;
+}
