@@ -1,9 +1,9 @@
 # implemented basic chat 
-# how to run this React App
 
 custom styling 
 username and usertoken hardcoded
 
+# how to run this React App
 ## Available Scripts
 
 In the project directory, you can run:
